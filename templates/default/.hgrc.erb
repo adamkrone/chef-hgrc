@@ -1,0 +1,13 @@
+<%= '[extensions]' if @extensions.length > 0 %>
+<% @extensions.each do |extension| %>
+<%= extension %> =
+<% end %>
+
+<%= '[auth]' if @auth.length > 0 %>
+<% @auth.each do |auth| %>
+<%= @name %>.prefix = <%= auth['prefix'] %>
+<%= @name %>.username = <%= auth['username'] %>
+<%= @name %>.password = <%= auth['password'] %>
+<%= @name %>.schemes = <%= auth['schemes'] %>
+
+<% end %>
