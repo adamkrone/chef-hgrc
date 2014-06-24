@@ -8,11 +8,7 @@
 node['hgrc']['users'].each do |user|
   template "/home/#{user.name}/.hgrc" do
     source ".hgrc.erb"
-    variables(
-      :name => user.name,
-      :auth => user.auth,
-      :extensions => user.extensions
-    )
+    variables :user => user
     action :create
   end
 end
