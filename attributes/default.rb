@@ -1,0 +1,1 @@
+default['hgrc']['users'] = []
