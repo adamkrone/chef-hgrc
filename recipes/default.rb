@@ -5,6 +5,8 @@
 # Copyright (C) 2014
 #
 
+include_recipe 'mercurial::default'
+
 node['hgrc']['users'].each do |user|
   template "/home/#{user.name}/.hgrc" do
     source '.hgrc.erb'
