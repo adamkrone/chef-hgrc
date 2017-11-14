@@ -1,17 +1,17 @@
-<% if @user.attribute?(:extensions) %>
-<%= '[extensions]' if @user.extensions.length > 0 %>
-<% @user.extensions.each do |extension| %>
+<% if @user['extensions']) %>
+<%= '[extensions]' if @user['extensions'].length > 0 %>
+<% @user['extensions'].each do |extension| %>
 <%= extension %> =
 <% end %>
 <% end %>
 
-<% if @user.attribute?(:auth) %>
-<%= '[auth]' if @user.auth.length > 0 %>
-<% @user.auth.each do |auth| %>
-<%= @user.name %>.prefix = <%= auth['prefix'] %>
-<%= @user.name %>.username = <%= auth['username'] %>
-<%= @user.name %>.password = <%= auth['password'] %>
-<%= @user.name %>.schemes = <%= auth['schemes'] %>
+<% if @user['auth']) %>
+<%= '[auth]' if @user['auth'].length > 0 %>
+<% @user['auth'].each do |auth| %>
+<%= @user['name'] %>.prefix = <%= auth['prefix'] %>
+<%= @user['name'] %>.username = <%= auth['username'] %>
+<%= @user['name'] %>.password = <%= auth['password'] %>
+<%= @user['name'] %>.schemes = <%= auth['schemes'] %>
 
 <% end %>
 <% end %>
