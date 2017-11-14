@@ -1,11 +1,11 @@
-<% if @user['extensions']) %>
+<% if @user['extensions'] %>
 <%= '[extensions]' if @user['extensions'].length > 0 %>
 <% @user['extensions'].each do |extension| %>
 <%= extension %> =
 <% end %>
 <% end %>
 
-<% if @user['auth']) %>
+<% if @user['auth'] %>
 <%= '[auth]' if @user['auth'].length > 0 %>
 <% @user['auth'].each do |auth| %>
 <%= @user['name'] %>.prefix = <%= auth['prefix'] %>
